@@ -10,7 +10,7 @@ import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 
-@Configuration
+// @Configuration
 public class S3Config {
 
     @Value("${ACCESS_KEY}")

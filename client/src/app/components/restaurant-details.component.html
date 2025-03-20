@@ -36,7 +36,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <button type="button" [routerLink]="['/']">Back</button>
+                    <button type="button" (click)="backToRestaurants()">Back</button>
                     <button type="submit" [disabled]="isFormValid()">Submit</button>
                 </td>
             </tr>

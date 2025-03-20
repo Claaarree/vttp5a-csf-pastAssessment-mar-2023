@@ -16,8 +16,8 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 @Service
 public class S3Services {
     
-    @Autowired
-    private AmazonS3 s3Client;
+    // @Autowired
+    // private AmazonS3 s3Client;
     
     public String upload(byte[] image) throws IOException {
         //User Data
@@ -38,7 +38,7 @@ public class S3Services {
 
        //create with public access
        putReq.withCannedAcl(CannedAccessControlList.PublicRead);
-       s3Client.putObject(putReq);
+    //    s3Client.putObject(putReq);
        System.out.println(">>>>>s3 file upload instance created");
        return key;
     }

@@ -2,4 +2,4 @@ TODO: Task 1 - Write the mongo import command here
 Local import command: mongoimport -hlocalhost --port=27017 -drestaurants -crestaurants --jsonArray restaurants.json
 railway import: 
 
-mongoimport --uri mongodb://mongo:woUuS8HqiQSdSq768kAI@containers-us-west-22.railway.app:7468/restaurants?authSource=admin -crestaurants --jsonArray restaurants.json
+mongoimport --uri="mongodb://mongo:IBIDkdAZlmQetlsYiGIOcgUREvaNCWdB@turntable.proxy.rlwy.net:12446/?authSource=admin" -d restaurants -c details --type=json --jsonArray --file=restaurants.json

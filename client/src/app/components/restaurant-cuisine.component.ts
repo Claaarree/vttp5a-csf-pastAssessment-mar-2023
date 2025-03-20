@@ -19,10 +19,11 @@ export class RestaurantCuisineComponent implements OnInit {
 	// TODO Task 3
 	// For View 2
   ngOnInit(): void {
-      this.route$ = this.activatedRoute.params.subscribe(params => {
-        console.log(params['cuisine']);
-        this.cuisine=params['cuisine'];
-      })
+      this.cuisine = this.activatedRoute.snapshot.params['cuisine'];
+      // this.route$ = this.activatedRoute.params.subscribe(params => {
+      //   console.log(params['cuisine']);
+      //   this.cuisine=params['cuisine'];
+      // })
       this.getRestaurantsByCuisine();
   }
 

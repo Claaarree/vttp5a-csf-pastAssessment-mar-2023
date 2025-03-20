@@ -28,16 +28,17 @@ export class RestaurantDetailsComponent implements OnInit {
     //initalise form
     this.form = this.createForm();
     //get the restaurant details
-    this.route$=this.activatedRoute.params.subscribe(params=>{
-      console.log(params['name'])
-      this.name = params['name'];
-    })
+    this.name = this.activatedRoute.snapshot.params['name']
+    // this.route$=this.activatedRoute.params.subscribe(params=>{
+    //   console.log(params['name'])
+    //   this.name = params['name'];
+    // })
     this.getRestaurantDetails();
   }
 
   createForm(): FormGroup {
     return this.fb.group({
-      name: this.fb.control('', [Validators.required]),
+      name: this.fb.control('', [Validators.required, Validators.minLength(3)]),
       rating: this.fb.control('', [Validators.required, Validators.min(1), Validators.max(5) ]),
       text: this.fb.control('', [Validators.required])
     })
@@ -86,4 +87,7 @@ export class RestaurantDetailsComponent implements OnInit {
     })
   }
 
+  protected backToRestaurants() {
+    this.router.navigate([`${this.restaurant.cuisine}/restaurants`])
+  }
 }
