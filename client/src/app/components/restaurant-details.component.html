@@ -1,0 +1,45 @@
+
+<div *ngIf="restaurant">
+    <form [formGroup]="form" (ngSubmit)="submitComment(restaurant.restaurantId)">
+        <table>
+            <tr>
+                <td>Restaurant id: {{restaurant.restaurantId}}</td>
+            </tr>
+            <tr>
+                <td>Name: {{restaurant.name}}</td>
+            </tr>
+            <tr>
+                <td>Cuisine: {{restaurant.cuisine}}</td>
+            </tr>
+            <tr>
+                <td>Address: {{restaurant.address}}</td>
+            </tr>
+            <tr>
+                <td><img src="{{restaurant.image}}"></td>
+            </tr>
+        </table>
+        <hr>
+        <h2>Comment</h2>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" formControlName="name"></td>
+            </tr>
+            <tr>
+                <td>Rating:</td>
+                <td><input type="number" formControlName="rating"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><textarea formControlName="text" placeholder="Type here" id="" cols="30" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" [routerLink]="['/']">Back</button>
+                    <button type="submit" [disabled]="isFormValid()">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

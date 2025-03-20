@@ -1,0 +1,6 @@
+<h1>List of cuisines</h1>
+<table *ngFor="let c of cuisines">
+    <tr>
+        <td (click)="getRestaurants(c)">{{c}}</td>
+    </tr>
+</table>

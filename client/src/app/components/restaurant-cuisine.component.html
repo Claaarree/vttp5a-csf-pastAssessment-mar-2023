@@ -1,0 +1,8 @@
+<h1>List of {{cuisine}} Restaurants</h1>
+<table *ngFor="let r of restaurants">
+    <tr>
+        <td (click)="getRestaurantDetails(r)">{{r}}</td>
+    </tr>
+</table>
+
+<button type="button" [routerLink]="['/']">Back</button>
